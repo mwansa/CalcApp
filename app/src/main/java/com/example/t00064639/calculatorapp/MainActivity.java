@@ -4,12 +4,15 @@ import android.content.DialogInterface;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.text.DecimalFormat;
+import java.util.function.DoublePredicate;
+import java.util.regex.Pattern;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -17,12 +20,14 @@ public class MainActivity extends AppCompatActivity {
     Boolean add, substract, division, mod, multiply, clear, delete, posNeg;
     String zero = "0";
     private Toast g;
-    DecimalFormat p4 = new DecimalFormat("0.0000");
+    Double answer;
     TextView result;
+    String yellow;
     TextView display;
-    float a, b;
-    float results;
-    String output = "";
+    Double output = 0.00;
+    String calc ="";
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,83 +75,61 @@ public class MainActivity extends AppCompatActivity {
         ;
         findViewById(R.id.buttonMod).setOnClickListener(click);
         ;
-        findViewById(R.id.buttonMemRecal).setOnClickListener(click);
-        ;
-        findViewById(R.id.buttonMemAdd).setOnClickListener(click);
-        ;
-        findViewById(R.id.buttonMemSub).setOnClickListener(click);
-        ;
+
 
         //TextView Definition
         result = (TextView) findViewById(R.id.textViewResult);
         display = (TextView) findViewById(R.id.textViewDisplay);
+        calc =display.getText().toString();
 
 
     }
-    public void  operate(int what) {
-        switch (what) {
-//check if addition is true
-            case 1:
-                add = true;
-                substract = false;
-                division = false;
-                multiply = false;
-                mod = false;
-                break;
-
-//check if subtraction is true
-            case 2:
-                add = false;
-                substract = true;
-                division = false;
-                multiply = false;
-                mod = false;
-                break;
-
-//check if division is true
-            case 3:
-                add = false;
-                substract = false;
-                division = true;
-                multiply = false;
-                mod = false;
-                break;
-
-//check if multiplication is true
-            case 4:
-                add = false;
-                substract = true;
-                division = false;
-                multiply = false;
-                mod = false;
-                break;
-
-//check if mod is true
-            case 5:
-                add = false;
-                substract = true;
-                division = false;
-                multiply = false;
-                mod = false;
-                break;
-
-//default
-            case -1:
-                add = false;
-                substract = false;
-                division = false;
-                multiply = false;
-                mod = false;
-                break;
+    private double operate(String a, String b, String op) {
+        switch (op) {
+            case "+":
+                return Double.valueOf(a) + Double.valueOf(b);
+            case "-":
+                return Double.valueOf(a) - Double.valueOf(b);
+            case "x":
+                return Double.valueOf(a) * Double.valueOf(b);
+            case "÷":
+                try {
+                    return Double.valueOf(a) / Double.valueOf(b);
+                } catch (Exception e) {
+                    Log.d("Calc", e.getMessage());
+                }
+            default:
+                return -1;
         }
     }
 
-            private View.OnClickListener click = new View.OnClickListener() {
+        public void clickOperate(View view){
+
+            }
+
+
+        public void clickNegPos(View view){
+
+        }
+
+         public void click(View view){
+
+        }
+
+         public void clickEquals(View view){
+
+         }
+
+
+
+
+    private View.OnClickListener click = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
             //Initialize Things
             Button pressBut = (Button) view;
-            String calc =display.getText().toString();
+
+            String results ="";
 
 
 
@@ -154,51 +137,61 @@ public class MainActivity extends AppCompatActivity {
 
                     case R.id.button0:
                         calc+="0";
+                        results="0";
                         display.setText(calc);
                         break;
 
                     case R.id.button1:
                         calc+="1";
+                        results="1";
                         display.setText(calc);
                         break;
 
                     case R.id.button2:
                         calc+="2";
+                        results="2";
                         display.setText(calc);
                         break;
 
                     case R.id.button3:
                         calc+="3";
+                        results="3";
                         display.setText(calc);
                         break;
 
                     case R.id.button4:
                         calc+="4";
+                        results="4";
                         display.setText(calc);
                         break;
 
                     case R.id.button5:
                         calc+="5";
+                        results="5";
                         display.setText(calc);
                         break;
 
                     case R.id.button6:
                         calc+="6";
+                        results="6";
                         display.setText(calc);
                         break;
 
                     case R.id.button7:
                         calc+="7";
+                        results="7";
                         display.setText(calc);
                         break;
 
                     case R.id.button8:
                         calc+="8";
+                        results="8";
                         display.setText(calc);
                         break;
 
                     case R.id.button9:
                         calc+="9";
+                        results="9";
                         display.setText(calc);
                         break;
 
@@ -211,7 +204,7 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.buttonSub:
                         calc+="-";
                         display.setText(calc);
-                        break;
+                         break;
 
                     case R.id.buttonMultiply:
                         calc+="x";
@@ -231,6 +224,7 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.buttonAdd:
                         calc+="+";
                         display.setText(calc);
+
                         break;
 
                     case R.id.buttonPoint:
@@ -240,7 +234,9 @@ public class MainActivity extends AppCompatActivity {
 
             }
             display.setText(calc);
+
         }
+
 
 
     };
