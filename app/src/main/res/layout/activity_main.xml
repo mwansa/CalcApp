@@ -61,61 +61,6 @@
             android:background="#272727">
 
             <Button
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:id="@+id/buttonMemClear"
-                android:layout_weight="1"
-                android:background="#212121"
-                android:text="@string/MC"
-                android:textSize="25dp"
-                android:textColor="#ffffff"
-                android:fontFamily="@string/abc_font_family_caption_material"
-                android:onClick="click" />
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:id="@+id/buttonMemRecal"
-                android:layout_weight="1"
-                android:background="#212121"
-                android:text="@string/MR"
-                android:textSize="25dp"
-                android:textColor="#ffffff"
-                android:fontFamily="@string/abc_font_family_caption_material"
-                android:onClick="click" />
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:id="@+id/buttonMemAdd"
-                android:layout_weight="1"
-                android:background="#212121"
-                android:text="M+"
-                android:textSize="25dp"
-                android:textColor="#ffffff"
-                android:fontFamily="@string/abc_font_family_caption_material"
-                android:onClick="click" />
-
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:id="@+id/buttonMemSub"
-                android:layout_weight="1"
-                android:background="#272727"
-                android:text="@string/Mmin"
-                android:textSize="25dp"
-                android:textColor="#ffffff"
-                android:fontFamily="@string/abc_font_family_caption_material"
-                android:onClick="click" />
-        </TableRow>
-
-        <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:background="#272727">
-
-            <Button
                 android:id="@+id/buttonPosNeg"
                 android:layout_column="0"
                 android:layout_weight="1"

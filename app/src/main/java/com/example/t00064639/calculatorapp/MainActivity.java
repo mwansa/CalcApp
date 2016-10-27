@@ -14,7 +14,7 @@ import java.text.DecimalFormat;
 public class MainActivity extends AppCompatActivity {
 
 
-    Boolean add, substarct, division, mod, multiply, clear, delete, posNeg;
+    Boolean add, substract, division, mod, multiply, clear, delete, posNeg;
     String zero = "0";
     private Toast g;
     DecimalFormat p4 = new DecimalFormat("0.0000");
@@ -83,6 +83,20 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
+    public void  operate(int what){
+        switch(what){
+
+            case 1:
+               add = true;
+                substract =
+            case -1:
+                add     = false;
+                sub     = false;
+                div     = false;
+                squr    = false;
+                mult    = false;
+                num     = false;
+                break;
 
     private View.OnClickListener click = new View.OnClickListener() {
         @Override
