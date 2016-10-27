@@ -83,22 +83,65 @@ public class MainActivity extends AppCompatActivity {
 
 
     }
-    public void  operate(int what){
-        switch(what){
-
+    public void  operate(int what) {
+        switch (what) {
+//check if addition is true
             case 1:
-               add = true;
-                substract =
-            case -1:
-                add     = false;
-                sub     = false;
-                div     = false;
-                squr    = false;
-                mult    = false;
-                num     = false;
+                add = true;
+                substract = false;
+                division = false;
+                multiply = false;
+                mod = false;
                 break;
 
-    private View.OnClickListener click = new View.OnClickListener() {
+//check if subtraction is true
+            case 2:
+                add = false;
+                substract = true;
+                division = false;
+                multiply = false;
+                mod = false;
+                break;
+
+//check if division is true
+            case 3:
+                add = false;
+                substract = false;
+                division = true;
+                multiply = false;
+                mod = false;
+                break;
+
+//check if multiplication is true
+            case 4:
+                add = false;
+                substract = true;
+                division = false;
+                multiply = false;
+                mod = false;
+                break;
+
+//check if mod is true
+            case 5:
+                add = false;
+                substract = true;
+                division = false;
+                multiply = false;
+                mod = false;
+                break;
+
+//default
+            case -1:
+                add = false;
+                substract = false;
+                division = false;
+                multiply = false;
+                mod = false;
+                break;
+        }
+    }
+
+            private View.OnClickListener click = new View.OnClickListener() {
         @Override
         public void onClick(View view) {
             //Initialize Things
