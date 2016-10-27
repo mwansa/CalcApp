@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
     TextView display;
     float a, b;
     float results;
-    String output = "Welcome to my First Calulator App";
+    String output = "";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,7 +89,7 @@ public class MainActivity extends AppCompatActivity {
         public void onClick(View view) {
             //Initialize Things
             Button pressBut = (Button) view;
-            String calc = result.getText().toString();
+            String calc =display.getText().toString();
 
 
 
@@ -97,46 +97,89 @@ public class MainActivity extends AppCompatActivity {
 
                     case R.id.button0:
                         calc+="0";
+                        display.setText(calc);
                         break;
 
                     case R.id.button1:
                         calc+="1";
+                        display.setText(calc);
                         break;
 
                     case R.id.button2:
                         calc+="2";
+                        display.setText(calc);
                         break;
 
                     case R.id.button3:
                         calc+="3";
+                        display.setText(calc);
                         break;
 
                     case R.id.button4:
                         calc+="4";
+                        display.setText(calc);
                         break;
 
                     case R.id.button5:
                         calc+="5";
+                        display.setText(calc);
                         break;
 
                     case R.id.button6:
                         calc+="6";
+                        display.setText(calc);
                         break;
 
                     case R.id.button7:
                         calc+="7";
+                        display.setText(calc);
                         break;
 
                     case R.id.button8:
                         calc+="8";
+                        display.setText(calc);
                         break;
 
                     case R.id.button9:
                         calc+="9";
+                        display.setText(calc);
                         break;
 
+                    case R.id.buttonClear:
+                        calc="";
+                        result.setText("");
+                        display.setText("");
+                        break;
 
+                    case R.id.buttonSub:
+                        calc+="-";
+                        display.setText(calc);
+                        break;
 
+                    case R.id.buttonMultiply:
+                        calc+="x";
+                        display.setText(calc);
+                        break;
+
+                    case R.id.buttonDivision:
+                        calc+="/";
+                        display.setText(calc);
+                        break;
+
+                    case R.id.buttonMod:
+                        calc+="%";
+                        display.setText(calc);
+                        break;
+
+                    case R.id.buttonAdd:
+                        calc+="+";
+                        display.setText(calc);
+                        break;
+
+                    case R.id.buttonPoint:
+                        calc+=".";
+                        display.setText(calc);
+                        break;
 
             }
             display.setText(calc);
