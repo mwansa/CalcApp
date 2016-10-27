@@ -26,7 +26,9 @@ public class MainActivity extends AppCompatActivity {
     TextView display;
     Double output = 0.00;
     String calc ="";
-
+    Double hello = null;
+    String results ="";
+    Boolean isOperator = false;
 
 
     @Override
@@ -83,7 +85,9 @@ public class MainActivity extends AppCompatActivity {
         calc =display.getText().toString();
 
 
+
     }
+
     private double operate(String a, String b, String op) {
         switch (op) {
             case "+":
@@ -99,9 +103,10 @@ public class MainActivity extends AppCompatActivity {
                     Log.d("Calc", e.getMessage());
                 }
             default:
-                return -1;
+                return hello;
         }
     }
+
 
         public void clickOperate(View view){
 
@@ -112,11 +117,11 @@ public class MainActivity extends AppCompatActivity {
 
         }
 
-         public void click(View view){
 
-        }
 
          public void clickEquals(View view){
+
+
 
          }
 
@@ -129,7 +134,7 @@ public class MainActivity extends AppCompatActivity {
             //Initialize Things
             Button pressBut = (Button) view;
 
-            String results ="";
+
 
 
 
@@ -149,7 +154,7 @@ public class MainActivity extends AppCompatActivity {
 
                     case R.id.button2:
                         calc+="2";
-                        results="2";
+                        results+="2";
                         display.setText(calc);
                         break;
 
